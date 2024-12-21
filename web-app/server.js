@@ -11,11 +11,25 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+// CORS middleware for development
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 // Routes
 app.post('/deobfuscate', async (req, res) => {
     try {
         const { code } = req.body;
         
+        if (!code || typeof code !== 'string') {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Invalid input: code must be a string' 
+            });
+        }
+
         const result = babel.transformSync(code, {
             plugins: [
                 [arrayReveal, { debug: false }]
@@ -27,18 +41,10 @@ app.post('/deobfuscate', async (req, res) => {
             deobfuscatedCode: result.code 
         });
     } catch (error) {
+        // Clean the error message
         let cleanError = error.message
-            .replace(/.*?unknown file: /g, '')  // Remove "unknown file: " prefix
-            .replace(/\(.*?\)/g, '')           // Remove anything in parentheses (usually file info)
-            .replace(/\s+/g, ' ')              // Replace multiple spaces with single space
-            .trim();                           // Remove leading/trailing whitespace
-
-        res.status(400).json({ 
-            success: false, 
-            error: cleanError
-        });
-    }
-});
+            .replace(/.*?unknown file: /g, '')
+            .replace(/
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
