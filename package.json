@@ -2,6 +2,6 @@
   "name": "array-reveal-root",
   "private": true,
   "scripts": {
-    "build": "cd web-app && npm install"
+    "build": "cd web-app && npm install && mkdir -p dist && cp -r public/* dist/"
   }
 }
