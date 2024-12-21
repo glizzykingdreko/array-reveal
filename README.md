@@ -12,6 +12,9 @@
   - [Example Structures](#example-structures)
     - [Obfuscated Code Example](#obfuscated-code-example)
     - [Deobfuscated Code](#deobfuscated-code)
+  - [Example input / output](#example-input--output)
+    - [Input](#input)
+    - [Output](#output)
   - [Credits](#credits)
 
 ## Overview
@@ -69,6 +72,52 @@ console.log("obfuscatedValue1");
 ```
 
 Check out the `src/index.js` file of the plugin and the test file for detailed example structures.
+
+## Example input / output
+
+### Input
+```js
+function _0xd265(_0x59617d, _0x58d3c7) {
+    var _0x1b87ae = _0x1b87();
+    return _0xd265 = function (_0xd26557, _0x4cd01e) {
+        _0xd26557 = _0xd26557 - 0x11b;
+        var _0x330cd1 = _0x1b87ae[_0xd26557];
+        return _0x330cd1;
+    }, _0xd265(_0x59617d, _0x58d3c7);
+} (function (_0x25544e, _0x16e516) {
+    var _0x3b4417 = _0xd265,
+        _0x364fc2 = _0x25544e();
+    while (!![]) {
+        try {
+            var _0x494a4b = -parseInt(_0x3b4417(0x129)) / 0x1 * (parseInt(_0x3b4417(0x11e)) / 0x2) + parseInt(_0x3b4417(0x121)) / 0x3 * (-parseInt(_0x3b4417(0x11b)) / 0x4) + parseInt(_0x3b4417(0x128)) / 0x5 * (parseInt(_0x3b4417(0x120)) / 0x6) + -parseInt(_0x3b4417(0x11c)) / 0x7 * (-parseInt(_0x3b4417(0x126)) / 0x8) + -parseInt(_0x3b4417(0x11d)) / 0x9 + parseInt(_0x3b4417(0x123)) / 0xa * (parseInt(_0x3b4417(0x124)) / 0xb) + parseInt(_0x3b4417(0x122)) / 0xc * (-parseInt(_0x3b4417(0x127)) / 0xd);
+            if (_0x494a4b === _0x16e516) break;
+            else _0x364fc2['push'](_0x364fc2['shift']());
+        } catch (_0x34e6fa) {
+            _0x364fc2['push'](_0x364fc2['shift']());
+        }
+    }
+}(_0x1b87, 0x5bb84));
+function hi() {
+    var _0x276aaf = _0xd265;
+    console[_0x276aaf(0x125)](_0x276aaf(0x11f));
+}
+hi();
+function _0x1b87() {
+    var _0x1c6e3a = ['9283ydPDKF', '20xbNuMP', '4419254bQYIoY', '3910743nXzIpT', '56wRSwvq', 'Hello World!', '18096HjYQyK', '191028gmOSlo', '12lPDxUQ', '67550hRCinP', '847obxRXx', 'log', '8Kzrtej', '4524598zbufur', '970iYozwE'];
+    _0x1b87 = function () {
+        return _0x1c6e3a;
+    };
+    return _0x1b87();
+}
+```
+
+### Output
+```javascript
+function hi() {
+    console['log']('Hello World!');
+}
+hi();
+```
 
 ## Credits
 Made with ❤️ by [@glizzykingdreko](https://github.com/glizzykingdreko) sponsord by [TakionAPI](https://takionapi.tech)

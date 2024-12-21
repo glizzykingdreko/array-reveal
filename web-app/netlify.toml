@@ -2,8 +2,14 @@
   base = "web-app"
   publish = "public"
   command = "npm install"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/*"
   to = "/main.html"
+  status = 200 
+
+[[redirects]]
+  from = "/deobfuscate"
+  to = "/.netlify/functions/deobfuscate"
   status = 200 
