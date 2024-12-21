@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             deobfuscateBtn.classList.add('loading');
             deobfuscateBtn.disabled = true;
 
-            const response = await fetch('/deobfuscate', {
+            const response = await fetch('/api/deobfuscate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

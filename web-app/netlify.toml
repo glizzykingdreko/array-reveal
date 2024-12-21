@@ -4,12 +4,27 @@
   command = "npm install"
   functions = "netlify/functions"
 
+# Handle CORS preflight requests
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# API redirect needs to be before the SPA redirect
+[[redirects]]
+  from = "/api/deobfuscate"
+  to = "/.netlify/functions/deobfuscate"
+  status = 200
+  force = true
+  [redirects.headers]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# SPA redirect
 [[redirects]]
   from = "/*"
-  to = "/main.html"
-  status = 200 
-
-[[redirects]]
-  from = "/deobfuscate"
-  to = "/.netlify/functions/deobfuscate"
+  to = "/index.html"
   status = 200 
