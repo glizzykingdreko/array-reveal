@@ -1,6 +1,6 @@
 [build]
   base = "web-app"
-  publish = "web-app/public"
+  publish = "public"
   command = "npm install"
 
 [[redirects]]
