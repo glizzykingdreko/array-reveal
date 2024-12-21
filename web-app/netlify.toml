@@ -1,9 +1,9 @@
 [build]
   base = "web-app"
-  publish = "public"
+  publish = "web-app/public"
   command = "npm install"
 
 [[redirects]]
   from = "/*"
-  to = "/main.html"
+  to = "/index.html"
   status = 200 
