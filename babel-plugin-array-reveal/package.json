@@ -1,0 +1,34 @@
+{
+    "name": "babel-plugin-array-reveal",
+    "version": "1.0.0",
+    "description": "A babel plugin to deobfuscate array-based JavaScript obfuscation",
+    "main": "src/index.js",
+    "bin": {
+        "array-reveal": "src/cli.js"
+    },
+    "scripts": {
+        "test": "jest",
+        "prepare": "chmod +x src/cli.js"
+    },
+    "keywords": [
+        "babel-plugin",
+        "deobfuscation",
+        "javascript",
+        "antibot",
+        "array-deobfuscation"
+    ],
+    "author": "glizzykingdreko",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/glizzykingdreko/array-reveal"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@babel/core": "^7.x.x",
+        "@babel/parser": "^7.x.x",
+        "@babel/traverse": "^7.x.x"
+    },
+    "devDependencies": {
+        "jest": "^29.x.x"
+    }
+}
