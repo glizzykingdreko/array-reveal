@@ -1,0 +1,7 @@
+{
+  "name": "array-reveal-root",
+  "private": true,
+  "scripts": {
+    "build": "cd web-app && npm install && npm run build"
+  }
+}
